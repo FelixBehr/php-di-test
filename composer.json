@@ -1,0 +1,12 @@
+{
+  "require": {
+    "php-di/php-di": "^6.0",
+    "ext-json": "*",
+    "ext-com": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Spectos": "src/"
+    }
+  }
+}
