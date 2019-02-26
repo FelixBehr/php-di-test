@@ -6,7 +6,10 @@ use Spectos\Requests\JSONRequest;
 
 $container = new DI\Container();
 
-$container->set('Spectos\Infrastructure\Database\Database', new Spectos\Infrastructure\Database\FileDatabase(__DIR__ . '/database.json'));
+$container->set(
+    'Spectos\Infrastructure\Database\Database',
+    new Spectos\Infrastructure\Database\FileDatabase(__DIR__ . '/database.json')
+);
 
 
 if($_GET['action'] === 'saveFeedback'){

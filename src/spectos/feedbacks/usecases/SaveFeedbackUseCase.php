@@ -1,12 +1,12 @@
 <?php
 
-namespace Spectos\Feedbacks\Services;
+namespace Spectos\Feedbacks\UseCases;
 
 use Spectos\Feedbacks\Models\Answer;
 use Spectos\Feedbacks\Models\Feedback;
 use Spectos\Infrastructure\Database\Database;
 
-class SaveFeedbacksService
+class SaveFeedbackUseCase
 {
     private $database;
 

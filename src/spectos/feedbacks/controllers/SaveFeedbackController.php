@@ -7,16 +7,16 @@ use Spectos\Responses\JSONResponse;
 
 class SaveFeedbackController
 {
-    private $saveFeedbacksService;
+    private $saveFeedbackUseCase;
 
-    public function __construct(\Spectos\Feedbacks\Services\SaveFeedbacksService $saveFeedbacksService)
+    public function __construct(\Spectos\Feedbacks\UseCases\SaveFeedbackUseCase $saveFeedbackUseCase)
     {
-        $this->saveFeedbacksService = $saveFeedbacksService;
+        $this->saveFeedbackUseCase = $saveFeedbackUseCase;
     }
 
     public function post(JSONRequest $request)
     {
-        $newID = $this->saveFeedbacksService->saveFeedback($request->getBodyAsArray());
+        $newID = $this->saveFeedbackUseCase->saveFeedback($request->getBodyAsArray());
         return new JSONResponse([
             'status' => 'saved',
             'id' => $newID

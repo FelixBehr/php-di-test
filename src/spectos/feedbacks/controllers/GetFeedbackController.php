@@ -7,17 +7,17 @@ use Spectos\Responses\JSONResponse;
 
 class GetFeedbackController
 {
-    private $getFeedbackService;
+    private $getFeedbackUseCase;
 
-    public function __construct(\Spectos\Feedbacks\Services\GetFeedbackService $getFeedbackService)
+    public function __construct(\Spectos\Feedbacks\UseCases\GetFeedbackUseCase $getFeedbackUseCase)
     {
-        $this->getFeedbackService = $getFeedbackService;
+        $this->getFeedbackUseCase= $getFeedbackUseCase;
     }
 
     public function get(JSONRequest $request)
     {
         $id = $request->getParam('id');
-        $feedback = $this->getFeedbackService->getFeedbackByID($id);
+        $feedback = $this->getFeedbackUseCase->getFeedbackByID($id);
         return new JSONResponse($feedback);
     }
 
